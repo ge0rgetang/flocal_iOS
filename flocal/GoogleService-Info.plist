@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>417885474904-kc6bhq6a208npca98jcuh5g2al0347al.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.417885474904-kc6bhq6a208npca98jcuh5g2al0347al</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>417885474904-al3cr0329li32r2r4hi8ugiutecppccd.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCNBMMQ8Imx1NoDDQ73RVoGyUaeMCIjEVA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>417885474904</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.dotnative.flocal</string>
+	<key>PROJECT_ID</key>
+	<string>flocal-d65dd</string>
+	<key>STORAGE_BUCKET</key>
+	<string>flocal-d65dd.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<true/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<false/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:417885474904:ios:37f3d4ac2d194649</string>
+	<key>DATABASE_URL</key>
+	<string>https://flocal-d65dd.firebaseio.com</string>
+</dict>
+</plist>

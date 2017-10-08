@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import flocal
+//@testable import flocal
 
 class flocalTests: XCTestCase {
     
