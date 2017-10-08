@@ -22,8 +22,6 @@ class AddedViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var notificationLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sortSegmentedControl: UISegmentedControl!
-    @IBOutlet weak var followersLabel: UILabel!
-    @IBOutlet weak var followersLabelHeight: NSLayoutConstraint!
     
     // MARK: - Vars
     
@@ -31,8 +29,8 @@ class AddedViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var locals: [User] = []
     var added: [User] = []
     var followers: [User] = []
+    var followersCount: Int = 0
     var blockedBy: [String] = []
-    
     var addedIDs: [String] = []
     
     var userIDToPass: String = "0"
@@ -78,11 +76,6 @@ class AddedViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.refreshControl.addTarget(self, action: #selector(self.observePeeps), for: .valueChanged)
         self.tableView.addSubview(self.refreshControl)
         
-        self.followersLabel.layer.shadowColor = UIColor.black.cgColor
-        self.followersLabel.layer.masksToBounds = false
-        self.followersLabel.layer.shadowOffset = CGSize(width: -1, height: 1)
-        self.followersLabel.layer.shadowOpacity = 0.42
-        
         self.sortSegmentedControl.selectedSegmentIndex = 0
         self.sortSegmentedControl.addTarget(self, action: #selector(self.sortSegmentDidChange), for: .valueChanged)
         self.sortSegmentedControl.layer.borderWidth = 1.5
@@ -116,15 +109,9 @@ class AddedViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         self.setLongLat()
         if self.sortSegmentedControl.selectedSegmentIndex == 0 {
-            self.showFollowers(false)
             self.checkAuthorizationStatus()
             self.locationManager.startUpdatingLocation()
         } else {
-            if self.sortSegmentedControl.selectedSegmentIndex == 2 {
-                self.showFollowers(true)
-            } else {
-                self.showFollowers(false)
-            }
             self.observePeeps()
             self.observeBlocked()
         }
@@ -181,6 +168,25 @@ class AddedViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
             
             return count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "followerCell") as! FollowersTableViewCell
+        cell.backgroundColor = .white
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.masksToBounds = false
+        cell.layer.shadowOffset = CGSize(width: -1, height: 1)
+        cell.layer.shadowOpacity = 0.42
+        cell.followersLabel.text = "\(self.followersCount) followers"
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if self.sortSegmentedControl.selectedSegmentIndex == 2 {
+            return UITableViewAutomaticDimension
+        } else {
+            return 0
         }
     }
     
@@ -314,11 +320,6 @@ class AddedViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.checkAuthorizationStatus()
             self.locationManager.startUpdatingLocation()
         } else {
-            if self.sortSegmentedControl.selectedSegmentIndex == 2 {
-                self.showFollowers(true)
-            } else {
-                self.showFollowers(false)
-            }
             self.observePeeps()
         }
     }
@@ -573,14 +574,6 @@ class AddedViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return peeps
     }
     
-    func showFollowers(_ bool: Bool) {
-        if bool {
-            self.followersLabelHeight.constant = 30
-        } else {
-            self.followersLabelHeight.constant = 0
-        }
-    }
-    
     func didIAdd(_ userID: String) -> Bool {
         if self.addedIDs.contains(userID) {
             return true
@@ -740,7 +733,8 @@ class AddedViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 let myFollowersCountRef = self.ref.child("users").child(self.myID).child("followersCount")
                 myFollowersCountRef.observe(.value, with: { (snapshot) -> Void in
                     if let count = snapshot.value as? Int {
-                        self.followersLabel.text = "\(count) followers"
+                        self.followersCount = count
+                        self.tableView.reloadSections(IndexSet(integer: 0), with: .none)
                     }
                 })
                 

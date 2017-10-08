@@ -20,6 +20,7 @@
 		5731E90A1EC15E7000DACF14 /* flocalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5731E9091EC15E7000DACF14 /* flocalUITests.swift */; };
 		5731E9181EC3C48100DACF14 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5731E9171EC3C48100DACF14 /* SignUpViewController.swift */; };
 		573D10761F4D359D00B98DEC /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573D10751F4D359D00B98DEC /* ActivityTableViewCell.swift */; };
+		57484A821F8AAC9E003B46BA /* FollowersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57484A811F8AAC9E003B46BA /* FollowersTableViewCell.swift */; };
 		574A41DC1F7B4B24004BAE01 /* camera_shutter.wav in Resources */ = {isa = PBXBuildFile; fileRef = 574A41D81F7B4B21004BAE01 /* camera_shutter.wav */; };
 		574A41DD1F7B4B27004BAE01 /* received_chat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 574A41DB1F7B4B22004BAE01 /* received_chat.wav */; };
 		574A41DE1F7B4B29004BAE01 /* sent_chat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 574A41DA1F7B4B22004BAE01 /* sent_chat.wav */; };
@@ -103,6 +104,7 @@
 		5731E90B1EC15E7000DACF14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5731E9171EC3C48100DACF14 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		573D10751F4D359D00B98DEC /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		57484A811F8AAC9E003B46BA /* FollowersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersTableViewCell.swift; sourceTree = "<group>"; };
 		574A41D81F7B4B21004BAE01 /* camera_shutter.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = camera_shutter.wav; sourceTree = "<group>"; };
 		574A41D91F7B4B21004BAE01 /* start_record.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = start_record.wav; sourceTree = "<group>"; };
 		574A41DA1F7B4B22004BAE01 /* sent_chat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sent_chat.wav; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 				57ED54B51EE9EEA50057DA90 /* NotificationTableViewCell.swift */,
 				573D10751F4D359D00B98DEC /* ActivityTableViewCell.swift */,
 				57ED54E31EF8C4BE0057DA90 /* PostTableViewCell.swift */,
+				57484A811F8AAC9E003B46BA /* FollowersTableViewCell.swift */,
 				57ED54E51EF8CCD30057DA90 /* WritePostTableViewCell.swift */,
 				57ED54EF1EFA32140057DA90 /* UserListTableViewCell.swift */,
 				57ED54F11EFA6D780057DA90 /* UserInfoTableViewCell.swift */,
@@ -657,6 +660,7 @@
 				57ED54F21EFA6D780057DA90 /* UserInfoTableViewCell.swift in Sources */,
 				57ED54E61EF8CCD30057DA90 /* WritePostTableViewCell.swift in Sources */,
 				572B2D511EFE58E100810355 /* ReportPostViewController.swift in Sources */,
+				57484A821F8AAC9E003B46BA /* FollowersTableViewCell.swift in Sources */,
 				57ED54BC1EE9FC0D0057DA90 /* MenuTableViewCell.swift in Sources */,
 				57ED54E21EF7A6050057DA90 /* PostViewController.swift in Sources */,
 			);

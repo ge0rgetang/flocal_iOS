@@ -2020,7 +2020,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n3T-KC-eVO">
-                                <rect key="frame" x="0.0" y="94" width="320" height="439"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="469"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="localsCell" rowHeight="76" id="G6w-dp-vKY" customClass="UserListTableViewCell" customModule="flocal" customModuleProvider="target">
@@ -2183,6 +2183,31 @@
                                             <outlet property="activityIndicatorView" destination="KsM-gm-Iek" id="9YK-xp-GbZ"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="followersCell" rowHeight="53" id="JVm-rx-EJx" customClass="FollowersTableViewCell" customModule="flocal" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="279" width="320" height="53"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JVm-rx-EJx" id="7mw-xL-wLd" customClass="FollowersTableViewCell" customModule="flocal" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="52.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- followers" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygO-IQ-RKo">
+                                                    <rect key="frame" x="8" y="8" width="304" height="37"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="ygO-IQ-RKo" secondAttribute="bottom" constant="8" id="Fm7-ma-Jcc"/>
+                                                <constraint firstAttribute="trailing" secondItem="ygO-IQ-RKo" secondAttribute="trailing" constant="8" id="LD6-sy-ChJ"/>
+                                                <constraint firstItem="ygO-IQ-RKo" firstAttribute="leading" secondItem="7mw-xL-wLd" secondAttribute="leading" constant="8" id="SYm-cz-aDJ"/>
+                                                <constraint firstItem="ygO-IQ-RKo" firstAttribute="top" secondItem="7mw-xL-wLd" secondAttribute="top" constant="8" id="pCN-pH-fS9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="followersLabel" destination="ygO-IQ-RKo" id="ujs-nZ-fv8"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nWe-eQ-e7K">
@@ -2198,16 +2223,6 @@
                                 </segments>
                                 <color key="tintColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- followers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOn-Ld-7um">
-                                <rect key="frame" x="0.0" y="64" width="320" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="hU5-8j-gfP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCj-2B-aP8">
                                 <rect key="frame" x="312" y="64" width="8" height="504"/>
                                 <constraints>
@@ -2220,8 +2235,6 @@
                         </subviews>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="eOn-Ld-7um" firstAttribute="leading" secondItem="7OP-IR-szc" secondAttribute="leading" id="5Qb-ue-8Lq"/>
-                            <constraint firstItem="eOn-Ld-7um" firstAttribute="top" secondItem="Ebi-XJ-52h" secondAttribute="bottom" id="8nB-xN-CxJ"/>
                             <constraint firstAttribute="trailing" secondItem="MCj-2B-aP8" secondAttribute="trailing" id="Cd3-ZH-15P"/>
                             <constraint firstItem="MCj-2B-aP8" firstAttribute="top" secondItem="Ebi-XJ-52h" secondAttribute="bottom" id="E0d-Wj-xU6"/>
                             <constraint firstAttribute="trailing" secondItem="n3T-KC-eVO" secondAttribute="trailing" id="F4m-3E-VKY"/>
@@ -2229,16 +2242,13 @@
                             <constraint firstItem="nWe-eQ-e7K" firstAttribute="leading" secondItem="7OP-IR-szc" secondAttribute="leading" id="W39-Tn-jQe"/>
                             <constraint firstAttribute="trailing" secondItem="nWe-eQ-e7K" secondAttribute="trailing" id="WHd-WB-bcv"/>
                             <constraint firstItem="n3T-KC-eVO" firstAttribute="leading" secondItem="7OP-IR-szc" secondAttribute="leading" id="WjV-nk-bIm"/>
-                            <constraint firstItem="n3T-KC-eVO" firstAttribute="top" secondItem="eOn-Ld-7um" secondAttribute="bottom" id="jOV-r6-hYE"/>
+                            <constraint firstItem="n3T-KC-eVO" firstAttribute="top" secondItem="Ebi-XJ-52h" secondAttribute="bottom" id="dAk-eX-MiM"/>
                             <constraint firstItem="nWe-eQ-e7K" firstAttribute="top" secondItem="n3T-KC-eVO" secondAttribute="bottom" id="oZa-OV-2xQ"/>
                             <constraint firstItem="uOt-JB-9BZ" firstAttribute="top" secondItem="nWe-eQ-e7K" secondAttribute="bottom" id="ohM-Ru-4X4"/>
-                            <constraint firstAttribute="trailing" secondItem="eOn-Ld-7um" secondAttribute="trailing" id="qN5-9W-B9X"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZQC-gu-bkJ"/>
                     <connections>
-                        <outlet property="followersLabel" destination="eOn-Ld-7um" id="1YX-91-Dhn"/>
-                        <outlet property="followersLabelHeight" destination="hU5-8j-gfP" id="fXE-Nn-bNo"/>
                         <outlet property="notificationLabel" destination="MCj-2B-aP8" id="weM-mY-2Aj"/>
                         <outlet property="sortSegmentedControl" destination="nWe-eQ-e7K" id="gj5-jO-uDN"/>
                         <outlet property="tableView" destination="n3T-KC-eVO" id="KLG-jN-ujl"/>
@@ -4526,7 +4536,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="eJL-80-c1g"/>
         <segue reference="m4F-zA-rJK"/>
-        <segue reference="d9f-uO-Moa"/>
+        <segue reference="ZBg-Px-b7e"/>
         <segue reference="Z1Q-gl-OsI"/>
         <segue reference="9RH-VT-Oaq"/>
         <segue reference="dQS-V1-iQ6"/>
